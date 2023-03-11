@@ -1,10 +1,10 @@
 import Filter from 'components/Filter';
 import CharacterList from 'components/CharacterList';
 import Logo from 'components/Logo';
-import { Box } from 'utils/Box';
 import { useSearchParams } from 'react-router-dom';
 import { useGetCharacterByNameQuery } from 'redux/characterSlice';
 import CharactersNotFound from 'components/CharactersNotFound';
+import { Wrapper } from './HomePage.styled';
 
 const HomePage = () => {
   const [searchParams] = useSearchParams();
@@ -13,11 +13,13 @@ const HomePage = () => {
   const { data, error } = useGetCharacterByNameQuery(query);
 
   return (
-    <Box pt="28px" width="100%">
-      <Logo />
-      <Filter />
-      {error?.status === 404 ? <CharactersNotFound /> : <CharacterList />}
-    </Box>
+    <>
+      <Wrapper>
+        <Logo />
+        <Filter />
+          {error?.status === 404 ? <CharactersNotFound /> : <CharacterList />}
+      </Wrapper>
+    </>
   );
 };
 

@@ -48,9 +48,9 @@ const CharacterList = () => {
                 <StyledItem key={id}>
                   <StyledLink to={`/character/${id}`} state={{ from: location }}>
                     <StyledImg>
-                       <img src={image} alt={name} width="240" />
+                       <img src={image} alt={name} width="312px" />
                     </StyledImg>
-                    <Box display="flex" flexDirection="column" m={5} height="70px">
+                      <Box display="flex" flexDirection="column" px={5} py={4}>
                       <CharacterName>{name}</CharacterName>
                       <Species>{species}</Species>
                     </Box>
