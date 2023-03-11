@@ -17,7 +17,7 @@ function App() {
       marginRight={0}
     >
       <Routes>
-        <Route path="/" element={<HomePage />} />
+        <Route path="/Rick-and-Morty-API-ReactJS" element={<HomePage />} />
         <Route path="/character/:id" element={<CharacterPage />} />
         <Route path="*" element={<NotFoundPage />} />
       </Routes>
