@@ -1,13 +1,13 @@
 import { Routes, Route } from 'react-router-dom';
 import { Box } from 'utils/Box';
 import HomePage from 'pages/HomePage';
-import CharacterDetails from 'pages/CharacterDetails';
+import CharacterPage from 'pages/CharacterPage';
 import NotFoundPage from 'pages/NotFoundPage';
 
 function App() {
   return (
     <Box
-      p={4}
+      p={1}
       display="flex"
       flexDirection="column"
       justifyContent="center"
@@ -18,7 +18,7 @@ function App() {
     >
       <Routes>
         <Route path="/" element={<HomePage />} />
-        <Route path="/character" element={<CharacterDetails />} />
+        <Route path="/character/:id" element={<CharacterPage />} />
         <Route path="*" element={<NotFoundPage />} />
       </Routes>
     </Box>

@@ -3,7 +3,6 @@ import { useLocation } from 'react-router-dom';
 import { getAllCharters } from 'services/API/API';
 import { Box } from 'utils/Box';
 import { sortedCharactersByName } from 'helpers/sortedCharacters';
-import { BASE_URL } from 'helpers/constans';
 import { useGetCharacterByNameQuery } from 'redux/characterSlice';
 import { useSearchParams } from 'react-router-dom';
 
@@ -47,7 +46,7 @@ const CharacterList = () => {
             sortedCharactersByName(characters).map(
               ({ id, name, image, species }) => (
                 <StyledItem key={id}>
-                  <StyledLink to={`${BASE_URL}${id}`} state={{ from: location }}>
+                  <StyledLink to={`/character/${id}`} state={{ from: location }}>
                     <StyledImg>
                        <img src={image} alt={name} width="240" />
                     </StyledImg>
