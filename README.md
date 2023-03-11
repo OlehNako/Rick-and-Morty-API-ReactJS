@@ -1,11 +1,6 @@
 My simple React JS project with free Rick and Morty API (https://rickandmortyapi.com/documentation)
 
-
-9.03 homepage and API was added
-
-10.03 search bar was added
-
-11.03 refactor to new repo, character page was added
+Deployed: https://olehnako.github.io/Rick-and-Morty-API-ReactJS/
 
 ____________________________
 
