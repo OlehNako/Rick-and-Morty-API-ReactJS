@@ -15,6 +15,7 @@ import {
   Species,
   StyledLink,
 } from './CharacterList.styled';
+import Loader from 'components/Loader';
 
 const CharacterList = () => {
   const [characters, setCharacters] = useState([]);
@@ -22,8 +23,8 @@ const CharacterList = () => {
   const [searchParams] = useSearchParams();
   const query = searchParams.get('query') ?? '';
 
-  const { data } = useGetCharacterByNameQuery(query);
-  console.log('data in list', data?.results);
+  const { data, error, isLoading } = useGetCharacterByNameQuery(query);
+  console.log('error', error);
   
   useEffect(() => {
     if (data) {
@@ -37,26 +38,30 @@ const CharacterList = () => {
   }, [data, query]);
 
   return (
-    
-      <StyledList>
-        {characters.length !== 0 &&
-          sortedCharactersByName(characters).map(
-            ({ id, name, image, species }) => (
-              <StyledItem key={id}>
-                <StyledLink to={`${BASE_URL}${id}`} state={{ from: location }}>
-                  <StyledImg>
-                    <img src={image} alt={name} width="240" />
-                  </StyledImg>
+    <>
+    {isLoading ? (
+      <Loader />
+      ) : (
+        <StyledList>
+          {characters.length !== 0 &&
+            sortedCharactersByName(characters).map(
+              ({ id, name, image, species }) => (
+                <StyledItem key={id}>
+                  <StyledLink to={`${BASE_URL}${id}`} state={{ from: location }}>
+                    <StyledImg>
+                       <img src={image} alt={name} width="240" />
+                    </StyledImg>
                     <Box display="flex" flexDirection="column" m={5} height="70px">
-                    <CharacterName>{name}</CharacterName>
-                    <Species>{species}</Species>
-                  </Box>
-                </StyledLink>
-              </StyledItem>
-            )
-          )}
-      </StyledList>
-    
+                      <CharacterName>{name}</CharacterName>
+                      <Species>{species}</Species>
+                    </Box>
+                  </StyledLink>
+                </StyledItem>
+              )
+            )}
+        </StyledList>
+      )}
+      </>
   );
 };
 
