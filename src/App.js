@@ -2,6 +2,7 @@ import { Routes, Route } from 'react-router-dom';
 import { Box } from 'utils/Box';
 import HomePage from 'pages/HomePage';
 import CharacterDetails from 'pages/CharacterDetails';
+import NotFoundPage from 'pages/NotFoundPage';
 
 function App() {
   return (
@@ -18,6 +19,7 @@ function App() {
       <Routes>
         <Route path="/" element={<HomePage />} />
         <Route path="/character" element={<CharacterDetails />} />
+        <Route path="*" element={<NotFoundPage />} />
       </Routes>
     </Box>
   );

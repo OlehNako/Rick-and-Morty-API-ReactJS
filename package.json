@@ -1,6 +1,6 @@
 {
-  "name": "test-task-rick-and-morty",
-  "version": "0.1.0",
+  "name": "rick-and-morty-api-reactjs",
+  "version": "0.2.0",
   "private": true,
   "dependencies": {
     "@reduxjs/toolkit": "^1.9.3",
