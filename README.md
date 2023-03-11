@@ -15,7 +15,7 @@ Homepage
 
 Character page example
 
-![изображение](https://user-images.githubusercontent.com/123407809/224489180-b5b5567a-d1ef-458c-984d-4e83aae0da2a.png)
+![изображение](https://user-images.githubusercontent.com/123407809/224489267-ec1d4570-203e-4c81-ace1-b8e513475374.png)
 
 _____________________________
 
